@@ -1,7 +1,7 @@
 import webapp2
 import os
 import jinja2
-from twilio import Client
+#from twilio import Client
 
 from google.appengine.ext import ndb
 from google.appengine.api import users
@@ -31,7 +31,14 @@ class AboutHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template("templates/about.html")
         self.response.write(template.render())
 
+class FormHandler(webapp2.RequestHandler):
+    def get(self):
+        #load the form page
+        template = jinja_environment.get_template("templates/form.html")
+        self.response.write(template.render())
+        
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/about', AboutHandler)
+    ('/about', AboutHandler),
+    ('/form', FormHandler)
 ], debug=True)

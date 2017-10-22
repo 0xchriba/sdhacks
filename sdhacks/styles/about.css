@@ -78,13 +78,13 @@
 
 body{
   background-image: url(/images/bridge.jpg);
-  background-size: 1500px 1500px;
+  background-size: 1500px 1300px;
 
 }
 
 .poltextcont{
   display:flex;
-  flex-direction: column;
+
   align-items: center;
   justify-content: center;
 }
@@ -93,7 +93,7 @@ body{
   font-family: monospace;
   font-size: 24px;
   position: absolute;
-  padding-left: 30%;
+
   margin-top: -190px;
   width: 50%;
   color: black;

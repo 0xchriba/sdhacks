@@ -54,7 +54,7 @@
 .polaroid {
   position: relative;
   padding-top: 20px;
-  padding-left: 15px;
+  padding-left: 110px;
   width: 300px;
   height: 300px;
 
@@ -62,7 +62,7 @@
 
 .polaroid img {
   border: 10px solid #fff;
-  border-bottom: 60px solid #fff;
+
   -webkit-box-shadow: 3px 3px 3px #777;
      -moz-box-shadow: 3px 3px 3px #777;
           box-shadow: 3px 3px 3px #777;
@@ -70,15 +70,33 @@
   width: 300px;
 }
 
-.polaroid p {
+#c {
   position: absolute;
-  text-align: center;
   bottom: 10px;
   font: 400 22px/1 'Kaushan Script', cursive;
   color: black;
-  padding-left: 30px;
+  padding-left: 130px;
+  color: teal;
 }
 
+#p {
+  position: absolute;
+  bottom: 10px;
+  font: 400 22px/1 'Kaushan Script', cursive;
+  color: black;
+  padding-left: 130px;
+  margin-left: 100%;
+  color: teal;
+}
+
+#t {
+  position: absolute;
+  bottom: 10px;
+  font: 400 22px/1 'Kaushan Script', cursive;
+  color: black;
+  padding-left: 1000px;
+  color: teal;
+}
 
 body{
   background-image: url(/images/bridge.jpg);
@@ -87,25 +105,37 @@ body{
 }
 
 .poltextcont{
-  display:flex;
+  position: relative;
   color: white;
-  align-items: center;
-  justify-content: center;
+
 }
 
-.poltext {
+.c {
   font-family: monospace;
   font-size: 24px;
   position: absolute;
   color: red;
-  margin-top: -190px;
   width: 50%;
-  color: black;
-  font-family: monospace;
   font-weight: 900;
+  padding-left: 130px;
 }
 
-img{
-  height:300px;
-  width:300px;
+.p {
+  font-family: monospace;
+  font-size: 24px;
+  position: absolute;
+  color: red;
+  width: 50%;
+  font-weight: 900;
+  padding-left: 560px;
+}
+
+.t {
+  font-family: monospace;
+  font-size: 24px;
+  position: absolute;
+  color: red;
+  width: 50%;
+  font-weight: 900;
+  padding-left: 1000px;
 }

@@ -54,11 +54,6 @@ body{
 }
 
 
-#logoutbutt {
-  background: black;
-  color: black;
-}
-
 .button {
   position: absolute;
   border: none;
@@ -184,6 +179,16 @@ body{
 }
 
 
+.logouturl{
+  text-decoration: none;
+  color: red;
+  margin-left: 80.5%;
+  position: absolute;
+  padding-top: 23px;
+  font-family: monospace;
+  font-size: 22px;
+  font-weight: 400;
+}
 
 #maintitle{
   font-size: 50px;
@@ -260,21 +265,12 @@ body{
   font-family: monospace;
   font-size: 20px;
   position: absolute;
-  color: black;
+  color: red;
   font-weight: 400;
   padding-top: 20px;
 }
 
-.logouturl{
-  text-decoration: none;
-  color:white;
-  margin-left: 80.5%;
-  position: absolute;
-  padding-top: 23px;
-  font-family: monospace;
-  font-size: 22px;
-  font-weight: 400;
-}
+
 
 .introbl{
   position: fixed;

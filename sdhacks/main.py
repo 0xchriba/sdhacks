@@ -1,7 +1,7 @@
 import webapp2
 import os
 import jinja2
-from twilio.rest import Client
+#from twilio.rest import Client
 
 from google.appengine.ext import ndb
 from google.appengine.api import users

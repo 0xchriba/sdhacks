@@ -15,9 +15,9 @@
 
 
 <!-- title and logo -->
-  <title>Wifi-Less</title>
+  <title>Ananogram</title>
   <div id="statmenu">
-    <h1 class = "statcont" id="maintitle">Wifi-Less</h1>
+    <h1 class = "statcont" id="maintitle">Ananogram</h1>
     <img id = "logo" src="images/Circle-icons-phone.svg.png" alt="LOGO">
   </div>
 
@@ -26,15 +26,19 @@
 {% if current_user %}
      <b id = "welcome_user">Welcome, {{current_user}}</b></br>
      <div class="dropdown">
-       <button onclick="myFunction()" class="dropbtn">Wifi-Less</button>
+       <button onclick="myFunction()" class="dropbtn">Ananogram</button>
        <div id="myDropdown" class="dropdown-content">
          <a href="/">Home</a>
          <a href="/about">About Us</a>
        </div>
      </div>
+     <p class = "introP">Fill out the form to send good vibes to anyone</p>
+     <form method="get" action="/form">
+        <button class="button2" type="submit"><span>Send Good Vibes</span></button>
+     </form>
      <a class = "logouturl" href="{{ logout_url }}" class = "logoutbutt">Log Out</a>
 
  {% else %}
      <a id="loginbutt" href="{{ login_url }}">Log In</a><br>
-     <p class = "introbl">Welcome to Wifi-Less, an interactive site that seeks to streamline the communication without wifi to get your questions answered. Login to use!</p>
+     <p class = "introbl">Welcome to Ananogram, an interactive site that seeks to streamline the communication without wifi to get your questions answered. Login to use!</p>
  {% endif %}

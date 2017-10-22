@@ -273,6 +273,7 @@ body{
 }
 
 .introbl{
+  position: fixed;
   width: 700px;
   text-align: center;
   font-family: monospace;

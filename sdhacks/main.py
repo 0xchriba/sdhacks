@@ -37,7 +37,6 @@ class FormHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template("templates/form.html")
         self.response.write(template.render())
 
-class ResultsHandler(webapp2.RequestHandler):
     def post(self):
         phone = self.request.get('phone')
         quote = self.request.get('quote')
@@ -61,6 +60,13 @@ class ResultsHandler(webapp2.RequestHandler):
             from_="+14159004260",
             media_url=url
         )
+        self.redirect('/results')
+        template = jinja_environment.get_template("templates/form.html")
+        self.response.write(template.render())
+
+class ResultsHandler(webapp2.RequestHandler):
+    def get(self):
+        
     #
     #     result_vars = {
     #         'artist' :self.request.get('artist'),
@@ -79,7 +85,7 @@ class ResultsHandler(webapp2.RequestHandler):
     #     template = jinja_environment.get_template("templates/home.html")
     #     self.response.write(template.render(result_vars))
     # def get(self):
-        template = jinja_environment.get_template("templates/form.html")
+        template = jinja_environment.get_template("templates/result.html")
         self.response.write(template.render())
 
 app = webapp2.WSGIApplication([

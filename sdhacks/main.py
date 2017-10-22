@@ -1,7 +1,7 @@
 import webapp2
 import os
 import jinja2
-#from twilio import Client
+from twilio.rest import Client
 
 from google.appengine.ext import ndb
 from google.appengine.api import users
@@ -36,9 +36,55 @@ class FormHandler(webapp2.RequestHandler):
         #load the form page
         template = jinja_environment.get_template("templates/form.html")
         self.response.write(template.render())
-        
+
+class ResultsHandler(webapp2.RequestHandler):
+    def post(self):
+        phone = self.request.get('phone')
+        quote = self.request.get('quote')
+        image = self.request.get('img')
+        url = None
+        if image == "1":
+            url = "http://1.bp.blogspot.com/-ZUgbh5Q9Gso/VdMmdjBTJ7I/AAAAAAAACkM/izIcNXoTcb4/s1600/short%2Binspirational%2Bquotes.JPG"
+        elif image == "2":
+            url = "http://firstdescents.org/wp-content/uploads/2014/01/inspirational-photo.jpg"
+        elif image == "3":
+            url = "https://i.ytimg.com/vi/FZk40J_drws/maxresdefault.jpg"
+        elif image == "4":
+            url = "http://photos1.blogger.com/blogger/4614/1851/1600/Tomando_el_sol_1280.jpg"
+
+        account_sid = "ACdef508d68369a117ef857740bf362603"
+        auth_token = "96e589688a8b066654d718a105170a44"
+        client = Client(account_sid, auth_token)
+        message = client.messages.create(
+            "+" + phone,
+            body= quote,
+            from_="+14159004260",
+            media_url=url
+        )
+    #
+    #     result_vars = {
+    #         'artist' :self.request.get('artist'),
+    #         'region' : self.request.get('region'),
+    #         'search_response' : search_response,
+    #         'vidId':vid_id,
+    #         'title':title,
+    #         'genre':genre,
+    #         'genre1':genre1,
+    #         'genre_list':genre_list
+    #
+    #
+    #         #'videos':videos
+    #
+    #     }
+    #     template = jinja_environment.get_template("templates/home.html")
+    #     self.response.write(template.render(result_vars))
+    # def get(self):
+        template = jinja_environment.get_template("templates/form.html")
+        self.response.write(template.render())
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/about', AboutHandler),
-    ('/form', FormHandler)
+    ('/form', FormHandler),
+    ('/results', ResultsHandler)
 ], debug=True)

@@ -9,4 +9,5 @@ message = client.messages.create(
     # "+14155199133",
     body='hello',
     from_="+14159004260",
+    media_url="http://firstdescents.org/wp-content/uploads/2014/01/inspirational-photo.jpg"
 )

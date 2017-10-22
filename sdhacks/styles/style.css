@@ -54,7 +54,10 @@ body{
 }
 
 
-
+#logoutbutt {
+  background: black;
+  color: black;
+}
 
 .button {
   position: absolute;
@@ -257,7 +260,7 @@ body{
   font-family: monospace;
   font-size: 20px;
   position: absolute;
-  color:white;
+  color: black;
   font-weight: 400;
   padding-top: 20px;
 }

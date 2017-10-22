@@ -1,16 +1,18 @@
 body {
   text-align: center;
-  font-family: monospace;
+  font-family: serif;
   font-weight: bolder;
-  background-image: url(/images/The-Eiffel-Tower-at-night.jpg);
+  font-style: italic;
+  background-image: url(/images/2.jpg);
   background-size: 1850px 1700px;
-  background-color: orange;
+  background-color: white;
   padding: 5px;
 }
 
 h2 {
   font-size: 40px;
-  font-family:monospace;
+  font-family: serif;
+  font-style: italic;
   font-weight: 600;
   padding: 15px;
 }
@@ -53,9 +55,9 @@ input[type=text]:focus {
 .button {
   display: inline-block;
   border-radius: 4px;
-  background-color: orange;
+  background-color: lightgreen;
   border: none;
-  color: #FFFFFF;
+  color: white;
   text-align: center;
   font-size: 28px;
   padding: 20px;

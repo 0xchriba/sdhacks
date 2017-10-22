@@ -1,24 +1,29 @@
-#!/usr/bin/env python
-#
-# Copyright 2007 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
 import webapp2
+import os
+import jinja2
+
+from google.appengine.ext import ndb
+from google.appengine.api import users
+#add users api
+
+jinja_environment = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
+
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        #loads the home page
+        current_user = users.get_current_user()
+        logout_url = users.create_logout_url('/')
+        login_url = users.create_login_url('/')
+
+        template_vars = {
+            "current_user": current_user,
+            "logout_url": logout_url,
+            "login_url": login_url,
+        }
+        template = jinja_environment.get_template("templates/home.html")
+        self.response.write(template.render(template_vars))
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!-- linking together the css and js -->
+<div>
+  <link rel = "stylesheet" type = "text/css" href = "/styles/style.css"/>
+  <script rel = "javasheet" type="text/javascript" src="/javascript/javascript.js"></script>
+  <script src="/javascript/javascript.js"></script>
+</div>
+
+
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/javascript/javascript.js"></script>
+
+
+<!-- title and logo -->
+  <title>Wifi-Less</title>
+  <div id="statmenu">
+    <h1 class = "statcont" id="maintitle">Wifi-Less</h1>
+
+    <img id = "logo" src="images/logo.png" alt="LOGO">
+  </div>
+
+
+<!-- fill out forms button -->
+
+
+
+
+
+
+
+{% if current_user %}
+     <b id = "welcome_user">Welcome, {{current_user}}</b></br>
+     <div class="dropdown">
+       <button onclick="myFunction()" class="dropbtn">Wifi-Less</button>
+       <div id="myDropdown" class="dropdown-content">
+         <a href="/">Home</a>
+       </div>
+     </div>
+     <a class = "logouturl" href="{{ logout_url }}" class = "logoutbutt">Log Out</a>
+
+ {% else %}
+     <a id="loginbutt" href="{{ login_url }}">Log In</a><br>
+     <p class = "introbl">Welcome to Wifi-Less, an interactive site that seeks to streamline the communi. Login to use!</p>
+ {% endif %}
+
+
+
+
+  <!--sign out button-->
+  <!-- <button id=#signOut href="#" onclick="signOut();">Sign out</button>
+  <script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+  </script>
+  <!-- google sign in -->
+  <!-- <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="276950401708-j0h4uu0865lqk4gu2tst9hsh8v10e20p.apps.googleusercontent.com">
+  <div id = "signin" class="g-signin2" data-onsuccess="onSignIn"></div> -->
+
+
+
+  <!-- <div id="statmenu">
+    <h1 id="maintitle">Food Post</h1>
+    <img id = "logo" src="images/logo.png" alt="LOGO">
+  </div>
+  <a href="{{ logout_url }}">Log Out</a><br>
+  <div>
+    <link rel = "stylesheet" type = "text/css" href = "/styles/style.css"/>
+    <script rel = "javasheet" type="text/javascript" src="/javascript/javascript.js"></script>
+  </div>
+  <div>
+  <button><a href="{{ login_url }}">Log in to become a donor or recipient.</a></button><br>
+  </div>
+ -->

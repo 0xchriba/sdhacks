@@ -1,7 +1,6 @@
 body{
-  background:#000;
-  -webkit-animation:colour 9s linear infinite;
-	-moz-animation:colour 9s linear infinite;
+  background-image: url("aC1kDw.jpg");
+
 }
 
 @keyframes animatedBackground {
@@ -264,9 +263,21 @@ body{
 }
 
 .introbl{
+  width: 700px;
   text-align: center;
   font-family: monospace;
-  color:white;
+  color: lightgreen;
   font-size: 27px;
-  margin-top: 20%;
+  margin-top: 15%;
+  margin-left: 25%;
+}
+
+#animate-area	{
+	width: 560px;
+	height: 400px;
+	background-image: url("aC1kDw.jpg");
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+
+	animation: animatedBackground 40s linear infinite;
 }

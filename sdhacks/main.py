@@ -51,8 +51,8 @@ class FormHandler(webapp2.RequestHandler):
         elif image == "4":
             url = "http://photos1.blogger.com/blogger/4614/1851/1600/Tomando_el_sol_1280.jpg"
 
-        account_sid = "ACdef508d68369a117ef857740bf362603"
-        auth_token = "96e589688a8b066654d718a105170a44"
+        account_sid = "None"
+        auth_token = "None"
         client = Client(account_sid, auth_token)
         message = client.messages.create(
             "+" + phone,
@@ -66,7 +66,7 @@ class FormHandler(webapp2.RequestHandler):
 
 class ResultsHandler(webapp2.RequestHandler):
     def get(self):
-        
+
     #
     #     result_vars = {
     #         'artist' :self.request.get('artist'),
